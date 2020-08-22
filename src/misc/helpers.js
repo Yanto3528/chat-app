@@ -7,3 +7,9 @@ export const getNameInitials = (name) => {
 
   return splitName[0][0];
 };
+
+export const transformToArrWithId = (snapVal) => {
+  return snapVal
+    ? Object.keys(snapVal).map((roomId) => ({ ...snapVal[roomId], id: roomId }))
+    : [];
+};
